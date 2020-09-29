@@ -87,9 +87,6 @@ func main() {
   ▀              ▀         ▀                          ▀                                              ███    ███                                                       
 		`
 		fmt.Println(au.Magenta(str))
-		fmt.Println()
-		fmt.Println()
-		fmt.Println("concurrency is: ", concurrency)
 		
 	}
 
@@ -194,7 +191,7 @@ func main() {
 	if details {
 		fmt.Println()
 		fmt.Println()
-		fmt.Println(au.Magenta("HAPPY HACK , EASY WIN"))
+		fmt.Println(au.Magenta("*******HAPPY HACK , EASY WIN*******"))
 	}
 
 }
