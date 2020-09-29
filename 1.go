@@ -65,6 +65,9 @@ func main() {
 	var domainWG2 sync.WaitGroup
 
 	output := make(chan string)
+	
+	var concurrency int
+	flag.IntVar(&concurrency, "c", 20, "设置线程")
 
 	flag.BoolVar(&details, "v", false, "输出详情")
 
@@ -86,7 +89,7 @@ func main() {
 		fmt.Println(au.Magenta(str))
 	}
 
-	for i := 0; i < 50; i++ {
+	for i := 0; i < concurrency; i++ {
 		domainWG1.Add(1)
 
 		go func() {
@@ -138,7 +141,7 @@ func main() {
 		close(domain_channel2)
 	}()
 
-	for i := 0; i < 50; i++ {
+	for i := 0; i < concurrency; i++ {
 		domainWG2.Add(1)
 
 		go func() {
