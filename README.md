@@ -1,13 +1,13 @@
 # killwildcard
 别问 问就是不知道用来干啥的
 
-Usage example:
+用法:
 
 ```
 ▶ cat domains.txt | killwildcard
 ```
 
-Install:
+安装:
 
 ```
 ▶ go get github.com/flag007/killwildcard
