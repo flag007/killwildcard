@@ -10,5 +10,5 @@
 安装:
 
 ```
-▶ go get github.com/flag007/killwildcard
+▶ go get -u -v github.com/flag007/killwildcard
 ```
