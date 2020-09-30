@@ -188,11 +188,4 @@ func main() {
 
 	outputWG.Wait()
 
-	if details {
-		fmt.Println()
-		fmt.Println()
-		fmt.Println(au.Magenta("**********************************************************************"))
-		fmt.Println(au.Magenta("**********************************************************************"))
-	}
-
 }
