@@ -67,7 +67,7 @@ func main() {
 	output := make(chan string)
 	
 	var concurrency int
-	flag.IntVar(&concurrency, "c", 20, "设置线程")
+	flag.IntVar(&concurrency, "c", 50, "设置线程")
 
 	flag.BoolVar(&details, "v", false, "输出详情")
 
