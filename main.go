@@ -157,7 +157,7 @@ func main() {
 					continue
 				}
 
-				if  ip_dicc.readMap(ip.String()) < 20 {
+				if  ip_dicc.readMap(ip.String()) < 50 {
 					output <- domain
 				}
 			}
@@ -191,7 +191,8 @@ func main() {
 	if details {
 		fmt.Println()
 		fmt.Println()
-		fmt.Println(au.Magenta("*******HAPPY HACK , EASY WIN*******"))
+		fmt.Println(au.Magenta("**********************************************************************"))
+		fmt.Println(au.Magenta("**********************************************************************"))
 	}
 
 }
