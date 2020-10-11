@@ -48,6 +48,7 @@ func (sm *SafeMap) writeMap(key string) {
 
 var au aurora.Aurora
 var details bool
+var killinput bool
 
 func init() {
 	au = aurora.NewAurora(true)
@@ -71,6 +72,7 @@ func main() {
 
 	flag.BoolVar(&details, "v", false, "输出详情")
 
+	flag.BoolVar(&killinput, "i", false, "清理二级域名或者三级域名作为其他子域名爆破工具输入")
 	flag.Parse()
 
 	if details {
@@ -98,6 +100,7 @@ func main() {
 				if err != nil {
 					continue
 				}
+
 				ip_dicc.writeMap(ip.String())
 			}
 			domainWG1.Done()
@@ -106,6 +109,12 @@ func main() {
 
 	for sc.Scan() {
 		domain := strings.ToLower(sc.Text())
+		if killinput {
+			ip, _ := net.ResolveIPAddr("ip", "cpxNCW3KuXaNuJt9waRl."+domain) 
+			if ip != nil {
+				continue
+			}
+		}
 		domain_channel1 <- domain
 		domains = append(domains, domain)
 	}
@@ -118,7 +127,6 @@ func main() {
 	domainWG1.Wait()
 
 	if details {
-		
 		for key, value := range ip_dicc.Map{
 			fmt.Println(au.Yellow(key), au.Yellow(value))
 		}
