@@ -158,6 +158,11 @@ func main() {
 				if err != nil {
 					continue
 				}
+				
+				if ip == nil {
+					output <- domain
+					continue
+				}
 
 				if ok := ip_dicc.okMap(ip.String()); !ok{
 					output <- domain
